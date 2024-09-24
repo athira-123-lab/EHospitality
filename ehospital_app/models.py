@@ -22,7 +22,7 @@ class Patient(models.Model):
         return self.name
 
 class Appointment(models.Model):
-    name=models.CharField(max_length=12)
+    name=models.CharField(max_length=366)
     date = models.DateField()
     time = models.TimeField()
 

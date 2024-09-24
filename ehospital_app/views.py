@@ -85,7 +85,7 @@ def Home(request):
     return render(request,'home.html')
 
 def Patient_details(request):
-    if  request.user.is_staff:
+    if not request.user.is_staff:
         return redirect('login')
     patient=Patient.objects.all()
     p={'patient':patient}
@@ -96,7 +96,7 @@ def Patient_details(request):
 
 def Add_patient(request):
 
-    if  request.user.is_staff:
+    if  not request.user.is_staff:
         return redirect('login')
 
     error = None
@@ -137,7 +137,7 @@ def Delete_patient(request,pid):
     return redirect('patient_details')
 
 def Schedule(request):
-    if  request.user.is_staff:
+    if not request.user.is_staff:
         return redirect('login')
     appointment=Appointment.objects.all()
     p={'appointment':appointment}
@@ -145,7 +145,7 @@ def Schedule(request):
 
 def Booking(request):
 
-    if  request.user.is_staff:
+    if not request.user.is_staff:
         return redirect('login')
 
     error = None
