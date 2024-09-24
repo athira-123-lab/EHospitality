@@ -13,7 +13,7 @@ class Patient(models.Model):
     name=models.CharField(max_length=255)
     gender=models.CharField(max_length=255)
     mobile=models.CharField(max_length=12)
-    age=models.CharField(null=True)
+    age=models.CharField(max_length=3)
     address=models.CharField(max_length=255)
     disease=models.CharField(max_length=255)
 
@@ -45,4 +45,4 @@ class Register(models.Model):
 
 
     def __str__(self):
-        return self.username
+        return self.name
